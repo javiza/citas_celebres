@@ -1,0 +1,16 @@
+
+<ion-content [fullscreen]="true">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Citas</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <app-cita-aleatoria></app-cita-aleatoria>
+
+  <a [routerLink]="['/gestion-citas']">
+    <ion-fab-button>
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </a>
+</ion-content>

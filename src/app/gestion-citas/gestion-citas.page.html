@@ -1,0 +1,47 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>gestion-citas</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Gestión de Citas</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content>
+    <ion-list>
+      <ion-list-header>
+        <ion-label>Agregar Cita</ion-label>
+      </ion-list-header>
+      <form (ngSubmit)="agregarCita()">
+        <ion-item>
+          <ion-label position="floating">Frase</ion-label>
+          <ion-input type="text" [(ngModel)]="nuevaCita.frase" name="frase"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Autor</ion-label>
+          <ion-input type="text" [(ngModel)]="nuevaCita.autor" name="autor"></ion-input>
+        </ion-item>
+        <ion-button type="submit" expand="block">Agregar</ion-button>
+      </form>
+    </ion-list>
+  
+    <ion-list>
+      <ion-list-header>
+        <ion-label>Citas Existentes</ion-label>
+      </ion-list-header>
+      <ion-item *ngFor="let cita of citas">
+        <ion-label>
+          <h2>{{ cita.frase }}</h2>
+          <p>- {{ cita.autor }}</p>
+        </ion-label>
+        <ion-button (click)="eliminarCita(cita)">
+          <ion-icon name="trash"></ion-icon>
+        </ion-button>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-content>

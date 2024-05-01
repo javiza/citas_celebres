@@ -1,0 +1,6 @@
+{
+    "appId": "io.trabajo2.app",
+    "appName": "app",
+    "webDir": "src",
+    "bundledWebRuntime": false
+  }
